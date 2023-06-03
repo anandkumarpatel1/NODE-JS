@@ -9,16 +9,20 @@ async function dbconnect() {
     if (result) {
         console.log('connected to database');
     }
+    else{
+        console.log('data base not connected');
+    }
     let db = result.db(database);
     let collection = db.collection('noob');
     return collection
-    // let response = await collection.find({}).toArray()
-    // console.log(response);
 }
 
-dbconnect().then((response) => {
-    response.find().toArray().then((data) => {
 
-        console.log(data);
-    })
-})
+module.exports = dbconnect
+// dbconnect().then((response) => {
+//     response.find().toArray().then((data) => {
+
+//         console.log(data);
+//     })
+// })
+
